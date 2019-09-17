@@ -1,0 +1,39 @@
+﻿@model  Invoice
+
+<h1>Invoice @Model.Invoicello</h1>
+
+<table class="table table-bordered col-md-4>
+    <tr>
+        <td>Id</td>
+        <td>@Model.Invoicello</td>
+
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>@Model.Date.ToShortDateString()
+        </td>
+
+    </tr>
+
+</table>
+
+<table class = "contenteditable=" table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Line item</th>
+            <th>Sum</th>
+            </tr>
+        </thead>
+    <tbody>
+        @foreach(var line in Model.Lines)
+        {
+            <tr>
+                <td>@line.Id</td>
+                <td>@line.LineItem</td>
+                <td>@line.Sum</td>
+            </tr>
+        }
+    </tbody>
+
+    </table>
